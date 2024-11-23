@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <title>Question 3</title>
+  </head>
+  <body>
+    <div class="mainContainer w-screen flex justify-center mt-[300px]">
+      <div class="inputContainer mt-8">
+        <input
+          type="text"
+          id="startValue"
+          placeholder="Enter start value"
+          class="w-60 p-3 border-[2px] border-gray-400 rounded-md my-2 block"
+        />
+        <input
+          type="text"
+          id="endValue"
+          placeholder="Enter End value"
+          class="w-60 p-3 border-[2px] border-gray-400 rounded-md my-2 block"
+        />
+        <button class="submitt" onclick="findEvenOdd()">Submit</button>
+        <button class="cancell" onclick="window.location.reload()">
+          Cancel
+        </button>
+      </div>
+    </div>
+    <div id="outputArea" class="mt-5 ml-10 text-center"></div>
+    <script>
+      const findEvenOdd = () => {
+        const startValue = Number(document.getElementById("startValue").value);
+        const endValue = Number(document.getElementById("endValue").value);
+        if (
+          isNaN(startValue) ||
+          isNaN(endValue) ||
+          startValue === "" ||
+          endValue === ""
+        ) {
+          alert("Please enter a valid number");
+          return;
+        }
+        if (endValue < startValue) {
+          alert("End value should be greater than start value");
+          return;
+        }
+        for (let i = startValue; i <= endValue; i++) {
+          if (i % 2 === 0) {
+            document.getElementById(
+              "outputArea"
+            ).innerHTML += `<p class="text-[24px] fotn-bold">${i} is even </p>`;
+          } else {
+            document.getElementById(
+              "outputArea"
+            ).innerHTML += `<p class="text-[24px] font-bold">${i} is odd </p>`;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
