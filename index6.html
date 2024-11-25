@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <title>Question 5</title>
+  </head>
+  <body class="w-screen h-screen flex justify-center items-center">
+    <div
+      class="mainContainer border-[2px] border-blue-500 rounded-sm w-[40%] px-4 py-3"
+    >
+      <input
+        type="text"
+        placeholder="Enter the Number"
+        id="num"
+        class="w-[80%] p-2 rounded-md border-[2px] border-black block mb-8 mx-auto my-9"
+      />
+      <p
+        class="text-[25px] font-bold text-center text-green-400"
+        id="result"
+      ></p>
+      <div class="btnContainer flex justify-around my-6">
+        <button
+          class="w-[200px] p-2 rounded-md text-white bg-green-500 block mb-2"
+          onclick="checkPalindrome()"
+        >
+          Check Palindrome
+        </button>
+        <button
+          class="w-[200px] p-2 rounded-md text-white bg-red-500 block mb-2"
+          onclick="cancel()"
+        >
+          Reset Value
+        </button>
+      </div>
+    </div>
+    <script>
+      const checkPalindrome = () => {
+        let num = Number(document.getElementById("num").value);
+        if (isNaN(num) || num === "" || num < 0) {
+          alert("Plz enter positive number”. ");
+          document.location.reload();
+        }
+        let reverseNum = num.toString().split("").reverse().join("");
+        if (num === Number(reverseNum)) {
+          document.getElementById("result").innerText = "Number is Palindrome";
+        } else {
+          document.getElementById("result").innerText =
+            "Number is not Palindrome";
+        }
+      };
+      const cancel = () => {
+        document.getElementById("num").value = "";
+        document.getElementById("result").innerText = "Result";
+      };
+    </script>
+  </body>
+</html>
