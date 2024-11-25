@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questin 1</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <p
+      id="result"
+      class="text-[25px] font-bold flex justify-center mt-[300px]"
+    ></p>
+    <script>
+      let num1 = prompt("Enter first positive number");
+      if (isNaN(num1) || num1 === "" || num1 < 0) {
+        alert("Plz enter positive number”. ");
+        document.location.reload();
+      }
+      let num2 = prompt("Enter second positive number");
+      if (isNaN(num2) || num2 === "" || num2 < 0) {
+        alert("Plz enter positive number”. ");
+        document.location.reload();
+      }
+
+      num1 = Number(num1);
+      num2 = Number(num2);
+      //find HCf
+      let hcf = 1;
+      for (let i = 1; i <= num1 && i <= num2; i++) {
+        if (num1 % i == 0 && num2 % i == 0) {
+          hcf = i;
+        }
+      }
+      document.getElementById("result").innerHTML = `Hcf or Gcd is : ${hcf}`;
+    </script>
+  </body>
+</html>
