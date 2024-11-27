@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passing using function</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center bg-[#D4EBF8]">
+    <div
+      class="formContainer w-[40%] bg-[#0A3981] p-5 rounded-xl border-[3px] border-[#E38E49]"
+    >
+      <form onsubmit="return getValue()" name="myForm">
+        <h1 class="text-[#E38E49] text-center text-2xl font-black mb-8 mt-4">
+          Login Form
+        </h1>
+        <input
+          type="text"
+          placeholder="Enter your name...."
+          name="name"
+          id="name"
+          class="block w-[65%] mx-auto my-6 px-2 py-2 border-[2px] border-[#E38E49] rounded-xl"
+        />
+
+        <input
+          type="text"
+          placeholder="Enter your password...."
+          name="password"
+          id="password"
+          class="block w-[65%] mx-auto my-6 px-2 py-2 border-[2px] border-[#E38E49] rounded-xl"
+        />
+        <p
+          class="text-center text-xl font-semibold text-red-600 my-4"
+          id="passwordError"
+        ></p>
+        <div class="btn flex justify-center items-center my-8">
+          <input
+            type="submit"
+            value="Submit"
+            class="bg-[#E38E49] text-[#0A3981] px-6 py-2 rounded-xl text-2xl font-black cursor-pointer"
+          />
+        </div>
+      </form>
+    </div>
+    <script>
+      const getValue = () => {
+        event.preventDefault();
+        let name = document.forms["myForm"]["name"].value.trim();
+        let password = document.forms["myForm"]["password"].value.trim();
+        if (name === "" || password === "") {
+          document.getElementById("passwordError").innerHTML =
+            "Please Fill All Fields";
+        } else {
+          document.getElementById("passwordError").innerHTML = "";
+          console.log(`Name is ${name} and Password is ${password}`);
+        }
+      };
+    </script>
+  </body>
+</html>
