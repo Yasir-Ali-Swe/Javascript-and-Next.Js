@@ -17,7 +17,13 @@
     </p>
     <script>
       let checkbox = document.getElementsByName("Laptop");
-      console.log(checkbox);
+      let result = "";
+      for (var i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked) {
+          result += checkbox[i].value;
+        }
+        document.write("<p> You have selected : " + result + "</p>");
+      }
     </script>
   </body>
 </html>
