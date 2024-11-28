@@ -15,15 +15,29 @@
     <p>
       <input type="checkbox" name="Laptop" value="Chrome Book" /> Chrome Book
     </p>
+    <button onclick="getValue()">Result</button>
     <script>
-      let checkbox = document.getElementsByName("Laptop");
-      let result = "";
-      for (var i = 0; i < checkbox.length; i++) {
-        if (checkbox[i].checked) {
-          result += checkbox[i].value;
+      function getValue() {
+        let checkboxes = document.getElementsByName("Laptop");
+        let result = "";
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked) {
+            result += checkboxes[i].value + " " + " Laptop, ";
+          }
         }
         document.write("<p> You have selected : " + result + "</p>");
       }
     </script>
   </body>
 </html>
+
+<!-- function getValue() {
+  let checkboxes = document.getElementsByName('laptop');
+  let result = "";
+  for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+          result += checkboxes[i].value + " " + " Laptop, ";
+      }
+  }
+  document.write("<p> You have selected : " + result + "</p>");
+} -->
