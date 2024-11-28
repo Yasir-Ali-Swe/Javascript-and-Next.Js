@@ -4,9 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>CheckBoxs</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <p><input type="checkbox" name="Laptop" value="Macbook" /> Macbook</p>
+    <p><input type="checkbox" name="Laptop" value="Hp Laptop" /> Hp Laptop</p>
+    <p>
+      <input type="checkbox" name="Laptop" value="Dell Laptop" /> Dell Laptop
+    </p>
+    <p>
+      <input type="checkbox" name="Laptop" value="Chrome Book" /> Chrome Book
+    </p>
+    <script>
+      let checkbox = document.getElementsByName("Laptop");
+      console.log(checkbox);
+    </script>
   </body>
 </html>
