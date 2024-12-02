@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: gray;
+      }
+      .container {
+        padding: 20px;
+        color: white;
+        background: purple;
+        width: 35%;
+        border-radius: 10px;
+      }
+      label {
+        margin: 20px;
+        font-size: 22px;
+        padding-right: 20px;
+      }
+      #num {
+        margin: 20px;
+        width: 45%;
+        padding: 8px 10px;
+      }
+      #submit {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        color: purple;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form name="Form1" action="#">
+        <label for="num">Enter Number</label>
+        <input type="text" id="num" name="text1" placeholder="Number...." />
+        <input
+          type="submit"
+          name="submit"
+          value="Submit"
+          id="submit"
+          onclick="checkValue(event)"
+        />
+      </form>
+    </div>
+    <script>
+      const checkValue = (event) => {
+        event.preventDefault();
+
+        const numbers = /^[-+]?[0-9]+$/;
+
+        const inputText = document.Form1.text1.value;
+
+        if (!numbers.test(inputText)) {
+          alert("Please enter a valid integer.");
+          return;
+        }
+
+        const minValue = parseFloat(prompt("Enter min value"));
+        const maxValue = parseFloat(prompt("Enter max value"));
+
+        if (isNaN(minValue) || isNaN(maxValue)) {
+          alert("Please enter valid numbers for the range.");
+          return;
+        }
+
+        const inputNumber = parseFloat(inputText);
+
+        if (inputNumber < minValue || inputNumber > maxValue) {
+          alert("Value is out of range.");
+        } else {
+          alert("Value is within the range.");
+        }
+      };
+    </script>
+  </body>
+</html>
