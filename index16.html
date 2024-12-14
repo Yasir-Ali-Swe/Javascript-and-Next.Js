@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center">
+    <div class="container w-[45%] border-[4px] border-blue-600 p-[25px]">
+      <input
+        type="text"
+        id="Start"
+        placeholder="Start Value"
+        class="w-[40%] px-1 py-3 border-[1px] border-gray-500"
+      />
+      <p id="Error" class="inline text-red-600 text-2xl pl-[20px]"></p>
+      <p class="font-black text-2xl py-3 pl-[40px]">To</p>
+      <input
+        type="text"
+        id="End"
+        placeholder="End Value"
+        class="w-[40%] px-1 py-3 border-[1px] border-gray-500"
+      />
+      <p id="SecondError" class="inline text-red-600 text-2xl pl-[20px]"></p>
+      <div class="buttons mt-7">
+        <button
+          class="bg-blue-500 px-11 py-5 text-white rounded-md my-3"
+          onclick="findSum()"
+        >
+          OK
+        </button>
+        <button
+          class="bg-gray-500 px-11 py-5 text-white rounded-md my-3 mx-7"
+          onclick="clearOutput()"
+        >
+          Cancel
+        </button>
+      </div>
+      <div id="sum" class="text-black text-center text-2xl pl-[20px]"></div>
+    </div>
+    <script>
+      const clearOutput = () => {
+        document.getElementById("Error").innerHTML = "";
+        document.getElementById("SecondError").innerHTML = "";
+        let startValue = (document.getElementById("Start").value = "");
+        let endValue = (document.getElementById("End").value = "");
+        document.getElementById("sum").innerHTML = "";
+      };
+      const findSum = () => {
+        let startValue = document.getElementById("Start").value.trim();
+        let endValue = document.getElementById("End").value.trim();
+        if (
+          isNaN(startValue) ||
+          isNaN(endValue) ||
+          startValue === "" ||
+          endValue === ""
+        ) {
+          document.getElementById("Error").innerHTML =
+            "Plz enter the positive value.";
+          document.getElementById("SecondError").innerHTML =
+            "Plz enter the positive value.";
+        } else if (startValue >= endValue) {
+          document.getElementById("Error").innerHTML =
+            "Start must be less then End.";
+          document.getElementById("SecondError").innerHTML =
+            "Start must be less then End.";
+        } else {
+          startValue = Number(startValue);
+          endValue = Number(endValue);
+          let sum = 0;
+          for (let i = startValue; i <= endValue; i++) {
+            sum += i;
+          }
+          document.getElementById("sum").innerHTML = `Sum is ${sum}.`;
+        }
+      };
+    </script>
+  </body>
+</html>
