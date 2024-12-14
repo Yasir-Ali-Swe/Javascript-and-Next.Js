@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center">
+    <div
+      class="container w-[30%] border-[4px] border-blue-600 p-[25px] rounded-xl"
+    >
+      <input
+        type="text"
+        id="inputValue"
+        placeholder="Enter your guess"
+        class="w-[70%] px-1 py-3 border-[1px] border-gray-500"
+      />
+      <p id="Error" class="inline text-red-600 text-2xl pl-[20px]"></p>
+      <div class="radio my-4">
+        <div>
+          <input
+            type="radio"
+            name="GuessNumber"
+            id="Basic"
+            value="Basic"
+            class="scale-150 font-black"
+          />
+          <label for="Basic" class="text-xl font-black"
+            >Basic Level (1-10)</label
+          >
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="GuessNumber"
+            id="Intermediate"
+            value="Intermediate"
+            class="scale-150 font-black"
+          />
+          <label for="Intermediate" class="text-xl font-black"
+            >Intermediate Level (10-50)</label
+          >
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="GuessNumber"
+            id="Advance"
+            value="Advance"
+            class="scale-150 font-black"
+          />
+          <label for="Advance" class="text-xl font-black"
+            >Advanced Level (101-500)</label
+          >
+        </div>
+      </div>
+      <div class="buttons mt-7">
+        <button
+          class="bg-green-500 px-11 py-5 text-white rounded-md my-3"
+          onclick="startGame()"
+        >
+          Start Game
+        </button>
+        <button
+          class="bg-red-500 px-11 py-5 text-white rounded-md my-3 mx-7"
+          onclick="clearOutput()"
+        >
+          Reset
+        </button>
+      </div>
+      <div id="result" class="text-black text-center text-2xl pl-[20px]"></div>
+    </div>
+    <script>
+      let targetNumber;
+
+      const startGame = () => {
+        const inputValue = document.getElementById("inputValue").value.trim();
+        const radios = document.getElementsByName("GuessNumber");
+        const error = document.getElementById("Error");
+        const result = document.getElementById("result");
+
+        error.innerHTML = "";
+        result.innerHTML = "";
+
+        let rangeStart, rangeEnd;
+
+        if (radios[0].checked) {
+          rangeStart = 1;
+          rangeEnd = 10;
+        } else if (radios[1].checked) {
+          rangeStart = 10;
+          rangeEnd = 50;
+        } else if (radios[2].checked) {
+          rangeStart = 101;
+          rangeEnd = 500;
+        } else {
+          error.innerHTML = "Please select a difficulty level.";
+          return;
+        }
+
+        if (!targetNumber) {
+          targetNumber =
+            Math.floor(Math.random() * (rangeEnd - rangeStart + 1)) +
+            rangeStart;
+        }
+
+        if (isNaN(inputValue) || inputValue === "") {
+          error.innerHTML = "Please enter a valid number.";
+          return;
+        }
+
+        const guessedNumber = parseInt(inputValue, 10);
+
+        if (guessedNumber < rangeStart || guessedNumber > rangeEnd) {
+          error.innerHTML = `Your guess must be between ${rangeStart} and ${rangeEnd}.`;
+          return;
+        }
+
+        if (guessedNumber === targetNumber) {
+          result.innerHTML = `🎉 Congratulations! You guessed the correct number: ${targetNumber}`;
+          targetNumber = null;
+        } else if (guessedNumber < targetNumber) {
+          result.innerHTML = "Too low! Try again.";
+        } else {
+          result.innerHTML = "Too high! Try again.";
+        }
+      };
+
+      const clearOutput = () => {
+        document.getElementById("inputValue").value = "";
+        document.getElementById("Error").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
+        targetNumber = null;
+      };
+    </script>
+  </body>
+</html>
