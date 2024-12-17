@@ -20,6 +20,10 @@ promise("Yasir Ali", 22)
   })
   .then((result) => {
     console.log(result);
+    return result.toLowerCase();
+  })
+  .then((result) => {
+    console.log(result);
   })
   .catch((err) => {
     console.log(err);
