@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Converter</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center">
+    <div class="container w-[45%] border-[4px] border-blue-600 p-[25px]">
+      <input
+        type="text"
+        id="inputValue"
+        placeholder="Three-digits positive integer."
+        class="w-[40%] px-1 py-3 border-[1px] border-gray-500"
+      />
+      <p id="Error" class="inline text-red-600 text-2xl pl-[20px]"></p>
+      <div class="radio my-4">
+        <div class="upperRadio">
+          <input
+            type="radio"
+            name="DecimalToBinary"
+            id="Decimal"
+            value="Decimal"
+            class="scale-150 font-black"
+          />
+          <label for="Decimal" class="text-xl font-black"
+            >Decimal To Binary</label
+          >
+        </div>
+        <div class="lowerRadio">
+          <input
+            type="radio"
+            name="DecimalToBinary"
+            id="Hexadecimal"
+            value="Hexadecimal"
+            class="scale-150 font-black"
+          />
+          <label for="Hexadecimal" class="text-xl font-black"
+            >Decimal To Hexadecimal</label
+          >
+        </div>
+      </div>
+      <div class="buttons mt-7">
+        <button
+          class="bg-blue-500 px-11 py-5 text-white rounded-md my-3"
+          onclick="Calculate()"
+        >
+          OK
+        </button>
+        <button
+          class="bg-gray-500 px-11 py-5 text-white rounded-md my-3 mx-7"
+          onclick="clearOutput()"
+        >
+          Cancel
+        </button>
+      </div>
+      <div id="result" class="text-black text-center text-2xl pl-[20px]"></div>
+    </div>
+    <script>
+      const Calculate = () => {
+        const inputValue = document.getElementById("inputValue").value.trim();
+        const radio = document.getElementsByName("DecimalToBinary");
+        const error = document.getElementById("Error");
+        const result = document.getElementById("result");
+
+        error.innerHTML = "";
+        result.innerHTML = "";
+
+        if (isNaN(inputValue) || inputValue === "") {
+          error.innerHTML = "Please enter a valid number.";
+          return;
+        }
+
+        const number = parseInt(inputValue, 10);
+
+        if (number < 0) {
+          error.innerHTML = "Please enter a positive integer.";
+          return;
+        }
+
+        if (radio[0].checked) {
+          result.innerHTML = `Binary: ${number.toString(2)}`;
+        } else if (radio[1].checked) {
+          result.innerHTML = `Hexadecimal: ${number
+            .toString(16)
+            .toUpperCase()}`;
+        } else {
+          error.innerHTML = "Please select an option.";
+        }
+      };
+
+      const clearOutput = () => {
+        document.getElementById("inputValue").value = "";
+        document.getElementById("Error").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
+      };
+    </script>
+  </body>
+</html>
