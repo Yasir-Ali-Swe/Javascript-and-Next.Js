@@ -13,5 +13,5 @@ let promo = (complete, name) => {
 (async () => {
   console.log(await promo(true, "Yasir"));
   console.log(await promo(true, "Ali"));
-  console.log(await promo(true, "Asad"));
+  console.log(await promo(true, "Asadk"));
 })();
