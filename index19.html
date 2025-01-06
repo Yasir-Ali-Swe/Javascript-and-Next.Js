@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center">
+    <div class="container w-[45%] border-[4px] border-blue-600 p-[25px]">
+      <input
+        type="text"
+        id="inputValue"
+        placeholder="Enter temperature."
+        class="w-[40%] px-1 py-3 border-[1px] border-gray-500"
+      />
+      <p id="Error" class="inline text-red-600 text-2xl pl-[20px]"></p>
+      <div class="radio my-4">
+        <div>
+          <input
+            type="radio"
+            name="Temperature"
+            id="CelsiusToFahrenheit"
+            value="CelsiusToFahrenheit"
+            class="scale-150 font-black"
+          />
+          <label for="CelsiusToFahrenheit" class="text-xl font-black"
+            >Celsius to Fahrenheit</label
+          >
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="Temperature"
+            id="FahrenheitToCelsius"
+            value="FahrenheitToCelsius"
+            class="scale-150 font-black"
+          />
+          <label for="FahrenheitToCelsius" class="text-xl font-black"
+            >Fahrenheit to Celsius</label
+          >
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="Temperature"
+            id="CelsiusToKelvin"
+            value="CelsiusToKelvin"
+            class="scale-150 font-black"
+          />
+          <label for="CelsiusToKelvin" class="text-xl font-black"
+            >Celsius to Kelvin</label
+          >
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="Temperature"
+            id="KelvinToCelsius"
+            value="KelvinToCelsius"
+            class="scale-150 font-black"
+          />
+          <label for="KelvinToCelsius" class="text-xl font-black"
+            >Kelvin to Celsius</label
+          >
+        </div>
+      </div>
+      <div class="buttons mt-7">
+        <button
+          class="bg-blue-500 px-11 py-5 text-white rounded-md my-3"
+          onclick="Calculate()"
+        >
+          OK
+        </button>
+        <button
+          class="bg-gray-500 px-11 py-5 text-white rounded-md my-3 mx-7"
+          onclick="clearOutput()"
+        >
+          Cancel
+        </button>
+      </div>
+      <div id="result" class="text-black text-center text-2xl pl-[20px]"></div>
+    </div>
+    <script>
+      const Calculate = () => {
+        const inputValue = document.getElementById("inputValue").value.trim();
+        const radio = document.getElementsByName("Temperature");
+        const error = document.getElementById("Error");
+        const result = document.getElementById("result");
+
+        error.innerHTML = "";
+        result.innerHTML = "";
+
+        if (isNaN(inputValue) || inputValue === "") {
+          error.innerHTML = "Please enter a valid number.";
+          return;
+        }
+
+        const temperature = parseFloat(inputValue);
+
+        if (radio[0].checked) {
+          const fahrenheit = (temperature * 9) / 5 + 32;
+          result.innerHTML = `Result: ${fahrenheit.toFixed(2)} °F`;
+        } else if (radio[1].checked) {
+          const celsius = ((temperature - 32) * 5) / 9;
+          result.innerHTML = `Result: ${celsius.toFixed(2)} °C`;
+        } else if (radio[2].checked) {
+          const kelvin = temperature + 273.15;
+          result.innerHTML = `Result: ${kelvin.toFixed(2)} K`;
+        } else if (radio[3].checked) {
+          const celsius = temperature - 273.15;
+          result.innerHTML = `Result: ${celsius.toFixed(2)} °C`;
+        } else {
+          error.innerHTML = "Please select a conversion option.";
+        }
+      };
+
+      const clearOutput = () => {
+        document.getElementById("inputValue").value = "";
+        document.getElementById("Error").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
+      };
+    </script>
+  </body>
+</html>
