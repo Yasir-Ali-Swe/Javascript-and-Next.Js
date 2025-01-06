@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center">
+    <div class="container w-[45%] border-[4px] border-blue-600 p-[25px]">
+      <input
+        type="text"
+        id="Start"
+        placeholder="Three-digits positive integer."
+        class="w-[40%] px-1 py-3 border-[1px] border-gray-500"
+      />
+      <p id="Error" class="inline text-red-600 text-2xl pl-[20px]"></p>
+      <div class="buttons mt-7">
+        <button
+          class="bg-blue-500 px-11 py-5 text-white rounded-md my-3"
+          onclick="findSum()"
+        >
+          OK
+        </button>
+        <button
+          class="bg-gray-500 px-11 py-5 text-white rounded-md my-3 mx-7"
+          onclick="clearOutput()"
+        >
+          Cancel
+        </button>
+      </div>
+      <div id="result" class="text-black text-center text-2xl pl-[20px]"></div>
+    </div>
+    <script>
+      const clearOutput = () => {
+        document.getElementById("Error").innerHTML = "";
+        let startValue = (document.getElementById("Start").value = "");
+        document.getElementById("result").innerHTML = "";
+      };
+      const findSum = () => {
+        let startValue = document.getElementById("Start").value.trim();
+
+        if (isNaN(startValue) || startValue === "") {
+          document.getElementById("Error").innerHTML =
+            "Plz enter the positive value.";
+        } else {
+          document.getElementById("Error").innerHTML = "";
+          startValue = Number(startValue);
+
+          let num = startValue;
+          let sum = 0;
+          let temp = num;
+          while (temp > 0) {
+            let remainder = temp % 10;
+            sum += remainder ** 3;
+            temp = (temp / 10) | 0;
+          }
+          if (sum === num) {
+            document.getElementById(
+              "result"
+            ).innerHTML = `Yes, it is an Armstrong number.`;
+          } else {
+            document.getElementById(
+              "result"
+            ).innerHTML = `No, it is not an Armstrong number.`;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
