@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center">
+    <div class="container w-[60%] flex justify-around">
+      <div class="left w-[50%] flex justify-center items-center">
+        <div class="leftSideContent w-[100%]">
+          <p class="text-xl font-extrabold">
+            Javascript function to find the area of triangle
+          </p>
+          <div class="inputs my-3">
+            <table>
+              <tr>
+                <td>
+                  <label for="firstSide" class="text-lg font-medium mr-2"
+                    >Enter the first side :
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="firstSide"
+                    placeholder="Side 1"
+                    class="px-3 py-1 border-[2px] border-black rounded"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="secondSide" class="text-lg font-medium mr-2"
+                    >Enter the second side :
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="secondSide"
+                    placeholder="Side 2"
+                    class="px-3 py-1 border-[2px] border-black rounded"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="thirdSide" class="text-lg font-medium mr-2"
+                    >Enter the third side :
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="thirdSide"
+                    placeholder="Side 3"
+                    class="px-3 py-1 border-[2px] border-black rounded"
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="button flex justify-center my-3">
+            <button
+              class="bg-gray-300 text-black px-3 py-1"
+              onclick="CalculateArea()"
+            >
+              Click Here
+            </button>
+          </div>
+          <p id="result" class="my-2 font-light text-xl text-center"></p>
+        </div>
+      </div>
+      <div class="right w-[50%]">
+        <img src="triangle.png" alt="triangleImg" />
+      </div>
+    </div>
+    <script>
+      let CalculateArea = () => {
+        let firstSide = document.getElementById("firstSide").value.trim();
+        let secondSide = document.getElementById("secondSide").value.trim();
+        let thirdSide = document.getElementById("thirdSide").value.trim();
+        if (
+          !firstSide ||
+          !secondSide ||
+          !thirdSide ||
+          isNaN(firstSide) ||
+          isNaN(secondSide) ||
+          isNaN(thirdSide)
+        ) {
+          alert("Please enter valid numbers for all sides.");
+          return;
+        }
+        let s = (firstSide + secondSide + thirdSide) / 2;
+        let area = Math.sqrt(
+          s * (s - firstSide) * (s - secondSide) * (s - thirdSide)
+        );
+        let result = document.getElementById("result");
+        result.innerHTML = "Area of Triangle : " + Math.round(area, 2);
+      };
+    </script>
+  </body>
+</html>
