@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Swap Values</title>
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center bg-gray-200">
+    <div
+      class="container flex justify-center items-center w-[35%] border-[2px] border-green-400 rounded-xl px-3 py-7 bg-white"
+    >
+      <div class="contentContainer w-full">
+        <div class="inputs mb-6">
+          <div class="mb-4">
+            <input
+              type="text"
+              id="FirstValue"
+              placeholder="Enter First Value..."
+              class="border-2 border-blue-500 px-3 py-2 rounded-lg block focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 w-full"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <input
+              type="text"
+              id="SecondValue"
+              placeholder="Enter Second Value..."
+              class="border-2 border-blue-500 px-3 py-2 rounded-lg block focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 w-full"
+              required
+            />
+          </div>
+        </div>
+        <div class="radios mb-6">
+          <div>
+            <input
+              type="radio"
+              name="swaping"
+              id="usingVariable"
+              class="scale-150 mr-2"
+            />
+            <label for="usingVariable" class="text-lg font-black"
+              >Using Third Variable</label
+            >
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="swaping"
+              id="withOutVariable"
+              class="scale-150 mr-2"
+            />
+            <label for="withOutVariable" class="text-lg font-black"
+              >With Variable</label
+            >
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="swaping"
+              id="usingPlusMinusOperator"
+              class="scale-150 mr-2"
+            />
+            <label for="usingPlusMinusOperator" class="text-lg font-black"
+              >Using +, - Operator</label
+            >
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="swaping"
+              id="usingMultiplicationOperator"
+              class="scale-150 mr-2"
+            />
+            <label for="usingMultiplicationOperator" class="text-lg font-black"
+              >Using *, / Operator</label
+            >
+          </div>
+        </div>
+        <div class="button my-6 text-center">
+          <button
+            class="px-8 py-4 text-xl bg-green-400 text-white rounded-lg"
+            onclick="swapValues()"
+          >
+            Swap Values
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function swapValues() {
+        console.log("Swap function triggered"); // This will show if the function is called
+        const firstValue = document.getElementById("FirstValue").value.trim();
+        const secondValue = document.getElementById("SecondValue").value.trim();
+        if (!firstValue || !secondValue) {
+          alert("Please fill in both values.");
+          return;
+        }
+        if (!/^\d{1,3}$/.test(firstValue) || !/^\d{1,3}$/.test(secondValue)) {
+          alert("Please enter valid positive numbers with up to three digits.");
+          return;
+        }
+        let num1 = parseInt(firstValue);
+        let num2 = parseInt(secondValue);
+        console.log(`First value: ${num1}, Second value: ${num2}`);
+        const method = document.querySelector('input[name="swaping"]:checked');
+        if (!method) {
+          alert("Please select a swapping method.");
+          return;
+        }
+
+        let result;
+        switch (method.id) {
+          case "usingVariable":
+            let temp = num1;
+            num1 = num2;
+            num2 = temp;
+            result = `Swapped values using a third variable: num1 = ${num1}, num2 = ${num2}`;
+            break;
+          case "withOutVariable":
+            num1 = num1 ^ num2;
+            num2 = num1 ^ num2;
+            num1 = num1 ^ num2;
+            result = `Swapped values without a third variable: num1 = ${num1}, num2 = ${num2}`;
+            break;
+          case "usingPlusMinusOperator":
+            num1 = num1 + num2;
+            num2 = num1 - num2;
+            num1 = num1 - num2;
+            result = `Swapped values using +, - operators: num1 = ${num1}, num2 = ${num2}`;
+            break;
+          case "usingMultiplicationOperator":
+            if (num2 === 0) {
+              alert(
+                "Cannot swap values using multiplication/division as num2 is zero."
+              );
+              return;
+            }
+            num1 = num1 * num2;
+            num2 = num1 / num2;
+            num1 = num1 / num2;
+            result = `Swapped values using *, / operators: num1 = ${num1}, num2 = ${num2}`;
+            break;
+          default:
+            alert("Invalid swap method.");
+            return;
+        }
+        alert(`Swap Successful! ${result}`);
+      }
+    </script>
+  </body>
+</html>
