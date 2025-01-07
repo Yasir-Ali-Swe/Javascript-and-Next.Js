@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Unit Converter</title>
+  </head>
+  <body class="w-screen h-screen flex justify-center items-center">
+    <div
+      class="container flex flex-col items-center border-[2px] border-green-400 rounded-xl h-[40%] w-[35%] px-5 py-10"
+    >
+      <div class="flex w-full justify-between mb-5">
+        <div class="leftDropDown flex flex-col items-center">
+          <select
+            id="inputUnit"
+            name="inputSelection"
+            class="border border-gray-400 px-3 py-2 rounded-lg"
+          >
+            <option value="Kilometer" selected>Kilometer</option>
+            <option value="Centimeter">Centimeter</option>
+            <option value="Mile">Mile</option>
+            <option value="Meter">Meter</option>
+          </select>
+          <input
+            type="text"
+            id="inputValue"
+            placeholder="Enter Value..."
+            class="mt-3 px-3 py-2 border border-gray-400 rounded-lg"
+          />
+        </div>
+
+        <div class="rightDropDown flex flex-col items-center">
+          <select
+            id="outputUnit"
+            name="outputSelection"
+            class="border border-gray-400 px-3 py-2 rounded-lg"
+          >
+            <option value="Kilometer">Kilometer</option>
+            <option value="Centimeter">Centimeter</option>
+            <option value="Mile" selected>Mile</option>
+            <option value="Meter">Meter</option>
+          </select>
+          <input
+            type="text"
+            id="outputValue"
+            placeholder="Output Value..."
+            class="mt-3 px-3 py-2 border border-gray-400 rounded-lg"
+            readonly
+          />
+        </div>
+      </div>
+
+      <button
+        id="convertButton"
+        class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg"
+      >
+        Convert
+      </button>
+    </div>
+
+    <script>
+      const conversionRates = {
+        Kilometer: {
+          Kilometer: 1,
+          Meter: 1000,
+          Centimeter: 100000,
+          Mile: 0.621371,
+        },
+        Meter: {
+          Kilometer: 0.001,
+          Meter: 1,
+          Centimeter: 100,
+          Mile: 0.000621371,
+        },
+        Centimeter: {
+          Kilometer: 0.00001,
+          Meter: 0.01,
+          Centimeter: 1,
+          Mile: 0.0000062137,
+        },
+        Mile: {
+          Kilometer: 1.60934,
+          Meter: 1609.34,
+          Centimeter: 160934,
+          Mile: 1,
+        },
+      };
+
+      const inputUnit = document.getElementById("inputUnit");
+      const outputUnit = document.getElementById("outputUnit");
+      const inputValue = document.getElementById("inputValue");
+      const outputValue = document.getElementById("outputValue");
+      const convertButton = document.getElementById("convertButton");
+      //   console.log(inputUnit.value, outputUnit.value);
+
+      convertButton.addEventListener("click", () => {
+        const input = parseFloat(inputValue.value);
+        if (isNaN(input)) {
+          outputValue.value = "Invalid input";
+          return;
+        }
+
+        const inputUnitValue = inputUnit.value;
+        const outputUnitValue = outputUnit.value;
+
+        const conversionRate = conversionRates[inputUnitValue][outputUnitValue];
+        const result = input * conversionRate;
+
+        outputValue.value = result.toFixed(2);
+      });
+    </script>
+  </body>
+</html>
