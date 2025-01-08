@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center">
+    <div class="container flex flex-col items-center">
+      <div class="img">
+        <img src="secondTriagle.png" alt="Triangle" />
+      </div>
+      <p class="text-xl font-bold">
+        Enter the width and height of your <br />
+        &nbsp;&nbsp;&nbsp;&nbsp; triangle to calculate the area.
+      </p>
+      <div class="table my-2">
+        <table>
+          <tr>
+            <td>
+              <label for="width" class="text-xl font-semibold mt-1"
+                >Width(w) :
+              </label>
+            </td>
+            <td>
+              <input
+                type="text"
+                id="width"
+                placeholder="Width"
+                class="w-[100px] border-[2px] border-black px-2 py-1 rounded mt-1"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Height" class="text-xl font-semibold mt-2"
+                >Height(H) :
+              </label>
+            </td>
+            <td>
+              <input
+                type="text"
+                id="Height"
+                placeholder="Height"
+                class="w-[100px] border-[2px] border-black px-2 py-1 rounded mt-2"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <button
+        class="bg-gray-300 text-black px-4 py-1 rounded-md my-3"
+        onclick="Calculate()"
+      >
+        Calculate Area
+      </button>
+      <p id="result" class="my-2 font-semibold text-xl text-center"></p>
+    </div>
+  </body>
+  <script>
+    let Calculate = () => {
+      let width = document.getElementById("width").value.trim();
+      let height = document.getElementById("Height").value.trim();
+      if (!width || !height || isNaN(width) || isNaN(height)) {
+        alert("Please enter valid numbers for both width and height.");
+        return;
+      }
+      let area = (width * height) / 2;
+      let result = document.getElementById("result");
+      result.innerHTML = "Area of Triangle : " + Math.round(area, 2);
+    };
+  </script>
+</html>
