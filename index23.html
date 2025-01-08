@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="h-screen w-screen flex justify-center items-center">
+    <div class="container w-[60%] border border-black flex justify-around">
+      <div class="left w-[50%]">
+        <div class="leftContent flex justify-center items-center w-[100%]">
+          <div class="content w-[100%] justify-center items-center mt-12">
+            <div class="input text-center">
+              <input
+                type="text"
+                placeholder="Enter value..."
+                class="px-3 py-2 border-[2px] border-blue-400 rounded-lg"
+                id="inputValue"
+              />
+            </div>
+            <div class="checkbox flex justify-center my-2">
+              <div class="table">
+                <table>
+                  <tr>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="checkbox"
+                        id="Area"
+                        class="scale-150 mr-2"
+                      />
+                    </td>
+                    <td>
+                      <label for="Area" class="text-lg font-medium"
+                        >Area of Circle</label
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="checkbox"
+                        id="Circumference"
+                        class="scale-150 mr-2"
+                      />
+                    </td>
+                    <td>
+                      <label for="Circumference" class="text-lg font-medium"
+                        >Area of Circumference</label
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="button flex justify-center my-3">
+              <button
+                class="bg-purple-700 px-4 py-2 text-white rounded-md"
+                onclick="Calculate()"
+              >
+                Click Here
+              </button>
+            </div>
+            <p id="result" class="my-2 font-light text-xl text-center"></p>
+          </div>
+        </div>
+      </div>
+      <div class="right w-[50%]">
+        <img src="Circle.png" alt="CircleImg" />
+      </div>
+    </div>
+    <script>
+      function Calculate() {
+        const inputField = document.getElementById("inputValue");
+        const radius = parseFloat(inputField.value);
+
+        if (inputField.value === "" || isNaN(radius) || radius <= 0) {
+          document.getElementById("result").innerHTML =
+            "Error: Please enter a valid radius (positive number).";
+          return;
+        }
+
+        const areaChecked = document.getElementById("Area").checked;
+        const circumferenceChecked =
+          document.getElementById("Circumference").checked;
+
+        let result = "";
+        if (areaChecked && circumferenceChecked) {
+          const area = Math.PI * Math.pow(radius, 2);
+          const circumference = 2 * Math.PI * radius;
+          result = `Area of Circle: ${area.toFixed(
+            2
+          )} <br> Circumference of Circle: ${circumference.toFixed(2)}`;
+        } else {
+          if (areaChecked) {
+            const area = Math.PI * Math.pow(radius, 2);
+            result = `Area of Circle: ${area.toFixed(2)}`;
+          }
+          if (circumferenceChecked) {
+            const circumference = 2 * Math.PI * radius;
+            result = `Circumference of Circle: ${circumference.toFixed(2)}`;
+          }
+        }
+
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
