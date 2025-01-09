@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body>
+    <script>
+      function getValuesAndCalculateSum() {
+        const rows = 2;
+        const cols = 5;
+        const array2D = [];
+        let sum = 0;
+        const userInput = prompt("Enter 10 values as comma-separated numbers:");
+        const values = userInput
+          .split(",")
+          .map((value) => parseInt(value.trim()));
+        if (values.length !== 10 || values.some(isNaN)) {
+          alert(
+            "Invalid input. Please enter exactly 10 valid numbers, separated by commas."
+          );
+          return;
+        }
+        let index = 0;
+        for (let i = 0; i < rows; i++) {
+          array2D[i] = [];
+          for (let j = 0; j < cols; j++) {
+            array2D[i][j] = values[index];
+            sum += values[index];
+            index++;
+          }
+        }
+        console.log("2D Array:", array2D);
+        alert(`The sum of the numbers you entered is: ${sum}`);
+      }
+      getValuesAndCalculateSum();
+    </script>
+  </body>
+</html>
