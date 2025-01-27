@@ -9,13 +9,12 @@ class StudentManagement {
         const student = {
             id: this.students.length + 1,
             name,
-            grades, // Array of grades
+            grades, 
         };
         this.students.push(student);
         console.log(`Student "${name}" added with grades: [${grades.join(", ")}]`);
     }
 
-    // Calculate average grade of a student
     calculateAverageGrade(id) {
         const student = this.students.find((s) => s.id === id);
         if (!student) {
@@ -78,13 +77,7 @@ studentManager.addStudent("Charlie", [92, 95, 96]);
 
 // View all students
 studentManager.viewStudents();
-
-// Calculate average grade for a specific student
-studentManager.calculateAverageGrade(1); // Alice's average
-
-// Find the top-performing student
+studentManager.calculateAverageGrade(1);
 studentManager.findTopStudent();
-
-// Add another student and recalculate
 studentManager.addStudent("David", [100, 98, 99]);
 studentManager.findTopStudent();
