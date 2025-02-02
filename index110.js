@@ -67,10 +67,10 @@ class StudentManagement {
     }
 }
 
-// Create a new Student Management instance
+
 const studentManager = new StudentManagement();
 
-// Add students
+
 studentManager.addStudent("Alice", [90, 85, 88]);
 studentManager.addStudent("Bob", [78, 80, 79]);
 studentManager.addStudent("Charlie", [92, 95, 96]);
