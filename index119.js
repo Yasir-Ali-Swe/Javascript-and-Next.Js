@@ -1,4 +1,4 @@
-// Callback Hell Example
+
 function fetchData(url, callback) {
     setTimeout(() => {
         callback(null, `Data from ${url}`);
@@ -15,7 +15,6 @@ fetchData("url1", (err, data1) => {
     });
 });
 
-// Solution using Promises
 function fetchDataPromise(url) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
