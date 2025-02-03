@@ -1,28 +1,24 @@
-// Classes and Objects in JavaScript
 
-// 1. Class Declaration
 class Person {
     constructor(name, age) {
         this.name = name;
         this.age = age;
     }
-    // Method
     greet() {
         console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
     }
 }
 
-// 2. Object Creation
+
 const person1 = new Person("John Doe", 25);
 person1.greet();
 
-// 3. Inheritance
+
 class Student extends Person {
     constructor(name, age, major) {
         super(name, age);
         this.major = major;
     }
-    // Override method
     greet() {
         console.log(`Hello, my name is ${this.name} and I am ${this.age} years old and studying ${this.major}.`);
     }
