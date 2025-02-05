@@ -51,30 +51,30 @@ for (let color of colors) {
 let person = { name: "John", age: 30, city: "New York" };
 for (let key in person) {
     console.log(`for...in key: ${key}, value: ${person[key]}`);
-    // Output: name: John, age: 30, city: New York
+
 }
 
-// 8. break (exiting a loop)
+
 for (let i = 1; i <= 5; i++) {
     if (i === 3) {
-        console.log("Breaking the loop at 3"); // Output: Breaking the loop at 3
+        console.log("Breaking the loop at 3"); 
         break;
     }
     console.log("Looping:", i);
 }
 
-// 9. continue (skipping an iteration)
+
 for (let i = 1; i <= 5; i++) {
     if (i === 3) {
-        console.log("Skipping iteration 3"); // Output: Skipping iteration 3
+        console.log("Skipping iteration 3");
         continue;
     }
     console.log("Continuing loop:", i);
 }
 
-// 10. try...catch...finally (error handling)
+
 try {
-    let result = 10 / 0; // No error, but invalid operation
+    let result = 10 / 0; 
     console.log("Result:", result); // Output: Infinity
     throw new Error("An example error"); // Throwing a custom error
 } catch (error) {
