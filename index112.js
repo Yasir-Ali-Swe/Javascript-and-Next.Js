@@ -1,9 +1,7 @@
-// Control Flow Statements in JavaScript
 
-// 1. if...else
 let num = 10;
 if (num > 0) {
-    console.log("Positive number"); // Output: Positive number
+    console.log("Positive number");
 } else if (num < 0) {
     console.log("Negative number");
 } else {
@@ -14,7 +12,7 @@ if (num > 0) {
 let fruit = "apple";
 switch (fruit) {
     case "apple":
-        console.log("You selected apple."); // Output: You selected apple.
+        console.log("You selected apple."); 
         break;
     case "banana":
         console.log("You selected banana.");
@@ -24,22 +22,22 @@ switch (fruit) {
         break;
 }
 
-// 3. for loop
+
 for (let i = 1; i <= 5; i++) {
-    console.log("for loop iteration:", i); // Output: Iterates from 1 to 5
+    console.log("for loop iteration:", i);
 }
 
 // 4. while loop
 let count = 1;
 while (count <= 3) {
-    console.log("while loop count:", count); // Output: Count 1, 2, 3
+    console.log("while loop count:", count);
     count++;
 }
 
 // 5. do...while loop
 let doCount = 1;
 do {
-    console.log("do...while count:", doCount); // Output: Count 1, 2, 3
+    console.log("do...while count:", doCount);
     doCount++;
 } while (doCount <= 3);
 
