@@ -8,7 +8,7 @@ if (num > 0) {
     console.log("Zero");
 }
 
-// 2. switch
+
 let fruit = "apple";
 switch (fruit) {
     case "apple":
@@ -27,14 +27,14 @@ for (let i = 1; i <= 5; i++) {
     console.log("for loop iteration:", i);
 }
 
-// 4. while loop
+
 let count = 1;
 while (count <= 3) {
     console.log("while loop count:", count);
     count++;
 }
 
-// 5. do...while loop
+
 let doCount = 1;
 do {
     console.log("do...while count:", doCount);
