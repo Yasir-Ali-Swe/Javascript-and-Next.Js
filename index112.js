@@ -75,19 +75,19 @@ for (let i = 1; i <= 5; i++) {
 
 try {
     let result = 10 / 0; 
-    console.log("Result:", result); // Output: Infinity
-    throw new Error("An example error"); // Throwing a custom error
+    console.log("Result:", result);
+    throw new Error("An example error");
 } catch (error) {
-    console.log("Caught an error:", error.message); // Output: An example error
+    console.log("Caught an error:", error.message);
 } finally {
-    console.log("Finally block executed."); // Output: Finally block executed.
+    console.log("Finally block executed.");
 }
 
 
 let isEven = num % 2 === 0 ? "Even" : "Odd";
 console.log("Ternary operator result:", isEven); 
 
-// 12. Logical operators
+
 if (num > 0 && num % 2 === 0) {
     console.log("Positive and even number");
 } else if (num > 0 || num % 2 === 0) {
