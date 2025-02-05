@@ -83,18 +83,18 @@ try {
     console.log("Finally block executed."); // Output: Finally block executed.
 }
 
-// 11. Conditional (ternary) operator
+
 let isEven = num % 2 === 0 ? "Even" : "Odd";
-console.log("Ternary operator result:", isEven); // Output: Even
+console.log("Ternary operator result:", isEven); 
 
 // 12. Logical operators
 if (num > 0 && num % 2 === 0) {
-    console.log("Positive and even number"); // Output: Positive and even number
+    console.log("Positive and even number");
 } else if (num > 0 || num % 2 === 0) {
     console.log("Either positive or even");
 }
 
-// 13. Nested control statements
+
 for (let i = 1; i <= 2; i++) {
     console.log("Outer loop iteration:", i);
     for (let j = 1; j <= 2; j++) {
