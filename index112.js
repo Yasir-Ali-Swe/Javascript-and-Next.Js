@@ -41,13 +41,13 @@ do {
     doCount++;
 } while (doCount <= 3);
 
-// 6. for...of (used for arrays or iterable objects)
+
 let colors = ["red", "green", "blue"];
 for (let color of colors) {
-    console.log("for...of color:", color); // Output: red, green, blue
+    console.log("for...of color:", color);
 }
 
-// 7. for...in (used for objects)
+
 let person = { name: "John", age: 30, city: "New York" };
 for (let key in person) {
     console.log(`for...in key: ${key}, value: ${person[key]}`);
