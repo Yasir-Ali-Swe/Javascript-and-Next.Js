@@ -41,7 +41,7 @@ class StudentManagement {
         });
     }
 
-    // Find top-performing student
+
     findTopStudent() {
         if (this.students.length === 0) {
             console.log("No students to evaluate.");
