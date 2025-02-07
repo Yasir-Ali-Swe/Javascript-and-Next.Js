@@ -1,10 +1,8 @@
-// Variable declarations and data types in JavaScript
 
-// 1. String
 let name = "John Doe";
-console.log("String:", name); // Output: John Doe
+console.log("String:", name); 
 
-// 2. Number
+
 let age = 25;
 console.log("Number:", age); // Output: 25
 
