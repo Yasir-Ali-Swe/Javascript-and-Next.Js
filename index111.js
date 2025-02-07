@@ -4,38 +4,31 @@ console.log("String:", name);
 
 
 let age = 25;
-console.log("Number:", age); // Output: 25
+console.log("Number:", age); 
 
-// 3. Boolean
+
 let isStudent = true;
-console.log("Boolean:", isStudent); // Output: true
+console.log("Boolean:", isStudent); 
 
-// 4. Undefined
+
 let address;
-console.log("Undefined:", address); // Output: undefined
+console.log("Undefined:", address); 
 
-// 5. Null
 let middleName = null;
-console.log("Null:", middleName); // Output: null
-
-// 6. Object
+console.log("Null:", middleName);
 let person = {
     firstName: "John",
     lastName: "Doe",
     age: 25,
     isStudent: true,
 };
-console.log("Object:", person); // Output: { firstName: "John", ... }
-
-// 7. Array
+console.log("Object:", person);
 let colors = ["red", "green", "blue"];
-console.log("Array:", colors); // Output: ["red", "green", "blue"]
-
-// Input using prompt (for browsers)
+console.log("Array:", colors);
 let userCity = prompt("Enter your city:");
 console.log("City entered by user:", userCity);
 
-// Input using Node.js (for runtime environments)
+
 const readline = require("readline").createInterface({
     input: process.stdin,
     output: process.stdout,
