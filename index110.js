@@ -1,10 +1,10 @@
-// Student Management System
+
 class StudentManagement {
     constructor() {
         this.students = [];
     }
 
-    // Add a new student
+
     addStudent(name, grades) {
         const student = {
             id: this.students.length + 1,
@@ -27,7 +27,7 @@ class StudentManagement {
         return average;
     }
 
-    // Display all students
+
     viewStudents() {
         if (this.students.length === 0) {
             console.log("No students in the system.");
