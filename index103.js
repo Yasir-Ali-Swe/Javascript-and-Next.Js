@@ -1,11 +1,11 @@
-// Define a class
+
 class Person {
     constructor(name, age) {
-      this.name = name; // Properties
+      this.name = name; 
       this.age = age;
     }
   
-    // Method
+
     greet() {
       console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
     }
