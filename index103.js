@@ -9,13 +9,11 @@ class Person {
     greet() {
       console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
     }
-  
-    // Getter
+
     get isAdult() {
       return this.age >= 18;
     }
-  
-    // Setter
+
     set updateName(newName) {
       this.name = newName;
     }
