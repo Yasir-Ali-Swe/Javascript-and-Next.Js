@@ -20,17 +20,17 @@ class Person {
       this.name = newName;
     }
   
-    // Static method
+
     static species() {
       return "Homo sapiens";
     }
   }
   
-  // Create objects
+
   const person1 = new Person("Alice", 25);
   const person2 = new Person("Bob", 15);
   
-  // Access properties and methods
+
   console.log("Person 1:");
   person1.greet();
   console.log("Is adult:", person1.isAdult);
@@ -39,7 +39,7 @@ class Person {
   person2.greet();
   console.log("Is adult:", person2.isAdult);
   
-  // Use setter to update name
+
   person2.updateName = "Charlie";
   console.log("\nUpdated Name of Person 2:", person2.name);
   
