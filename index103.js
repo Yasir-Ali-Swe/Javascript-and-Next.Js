@@ -43,13 +43,13 @@ class Person {
   person2.updateName = "Charlie";
   console.log("\nUpdated Name of Person 2:", person2.name);
   
-  // Call a static method
+
   console.log("\nSpecies of humans:", Person.species());
   
-  // Inheritance example
+
   class Employee extends Person {
     constructor(name, age, job) {
-      super(name, age); // Call the parent class constructor
+      super(name, age); 
       this.job = job; 
     }
   
