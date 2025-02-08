@@ -50,10 +50,10 @@ class Person {
   class Employee extends Person {
     constructor(name, age, job) {
       super(name, age); // Call the parent class constructor
-      this.job = job; // New property
+      this.job = job; 
     }
   
-    // Overriding a method
+
     greet() {
       console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and I work as a ${this.job}.`);
     }
