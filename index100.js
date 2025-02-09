@@ -10,18 +10,16 @@ class Person {
     getFullName() {
       return `${this.firstName} ${this.lastName}`;
     }
-  
-    // Static method (belongs to the class, not individual objects)
+
     static greet() {
       console.log("Hello from the Person class!");
     }
-  
-    // Getter for age
+
     get getAge() {
       return this.age;
     }
   
-    // Setter for age
+
     set setAge(newAge) {
       this.age = newAge;
     }
