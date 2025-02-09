@@ -41,11 +41,11 @@ console.log("Person 1 Age (After Setter):", person1.getAge);
 
 Person.greet(); 
   
-  // Adding a New Property to an Object
-  person1.job = "Software Engineer"; // Dynamic addition
+
+person1.job = "Software Engineer";
   console.log("\nPerson 1 Job:", person1.job);
   
-  // Looping Through Object Properties
+
   console.log("\nPerson 1 Properties:");
   for (const key in person1) {
     if (person1.hasOwnProperty(key)) {
