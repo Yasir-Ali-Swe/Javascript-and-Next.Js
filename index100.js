@@ -25,16 +25,16 @@ class Person {
     }
   }
   
-  // Creating Objects
+
   const person1 = new Person("John", "Doe", 30);
   const person2 = new Person("Jane", "Smith", 25);
   
-  // Accessing Object Properties and Methods
-  console.log("Person 1 Full Name:", person1.getFullName()); // John Doe
-  console.log("Person 2 Full Name:", person2.getFullName()); // Jane Smith
-  
-  // Using Getters and Setters
-  console.log("\nPerson 1 Age (Getter):", person1.getAge); // 30
+
+console.log("Person 1 Full Name:", person1.getFullName());
+console.log("Person 2 Full Name:", person2.getFullName());
+
+
+console.log("\nPerson 1 Age (Getter):", person1.getAge); 
   person1.setAge = 35; // Using Setter
   console.log("Person 1 Age (After Setter):", person1.getAge); // 35
   
