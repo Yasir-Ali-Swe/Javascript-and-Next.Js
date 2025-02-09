@@ -1,13 +1,12 @@
-// Defining a Class
+
 class Person {
-    // Constructor to initialize object properties
     constructor(firstName, lastName, age) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.age = age;
     }
   
-    // Method to display full name
+
     getFullName() {
       return `${this.firstName} ${this.lastName}`;
     }
