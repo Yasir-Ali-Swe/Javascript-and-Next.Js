@@ -35,11 +35,11 @@ console.log("Person 2 Full Name:", person2.getFullName());
 
 
 console.log("\nPerson 1 Age (Getter):", person1.getAge); 
-  person1.setAge = 35; // Using Setter
-  console.log("Person 1 Age (After Setter):", person1.getAge); // 35
-  
-  // Using Static Methods
-  Person.greet(); // Hello from the Person class!
+person1.setAge = 35;
+console.log("Person 1 Age (After Setter):", person1.getAge);
+
+
+Person.greet(); 
   
   // Adding a New Property to an Object
   person1.job = "Software Engineer"; // Dynamic addition
