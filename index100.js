@@ -53,7 +53,7 @@ person1.job = "Software Engineer";
     }
   }
   
-  // Object.keys() and Object.values()
+
   console.log("\nPerson 2 Keys:", Object.keys(person2));
   console.log("Person 2 Values:", Object.values(person2));
   
