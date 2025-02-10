@@ -45,7 +45,5 @@ function fetchData(value, delay) {
       console.log("Async/Await process complete");
     }
   }
-  
-// Calling the async function
   fetchAllData();
   
