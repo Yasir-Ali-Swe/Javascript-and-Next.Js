@@ -20,7 +20,7 @@ function fetchData(value, delay) {
       return fetchData(null, 1000); 
     })
     .catch(error => {
-      console.error(error); // Catching the error
+      console.error(error);
     })
     .finally(() => {
       console.log("Promise chain complete\n");
@@ -36,11 +36,11 @@ function fetchData(value, delay) {
       const data2 = await fetchData("Async Data 2", 1000);
       console.log(data2);
   
-      // Simulating an error
+
       const data3 = await fetchData(null, 1000);
       console.log(data3);
     } catch (error) {
-      console.error(error); // Handling the error
+      console.error(error); 
     } finally {
       console.log("Async/Await process complete");
     }
