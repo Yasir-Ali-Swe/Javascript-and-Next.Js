@@ -1,4 +1,3 @@
-// Function that returns a Promise
 function fetchData(value, delay) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -9,9 +8,7 @@ function fetchData(value, delay) {
         }
       }, delay);
     });
-  }
-  
-  // Using Promise Chaining
+}
   console.log("Promise Chaining:");
   fetchData("Data 1", 1000)
     .then(result => {
