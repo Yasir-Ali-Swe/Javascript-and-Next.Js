@@ -13,11 +13,11 @@ function fetchData(value, delay) {
   fetchData("Data 1", 1000)
     .then(result => {
       console.log(result);
-      return fetchData("Data 2", 1000); // Chaining another promise
+      return fetchData("Data 2", 1000); 
     })
     .then(result => {
       console.log(result);
-      return fetchData(null, 1000); // Simulating an error
+      return fetchData(null, 1000); 
     })
     .catch(error => {
       console.error(error); // Catching the error
@@ -26,7 +26,7 @@ function fetchData(value, delay) {
       console.log("Promise chain complete\n");
     });
   
-  // Using Async/Await
+
   async function fetchAllData() {
     console.log("Async/Await:");
     try {
