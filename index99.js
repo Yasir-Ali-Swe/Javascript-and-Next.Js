@@ -46,6 +46,6 @@ function fetchData(value, delay) {
     }
   }
   
-
+// Calling the async function
   fetchAllData();
   
