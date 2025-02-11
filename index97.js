@@ -1,12 +1,12 @@
-// String Array
+
 const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
 
-// 1. Accessing Array Elements
-console.log("First Fruit:", fruits[0]); // Apple
-console.log("Last Fruit:", fruits[fruits.length - 1]); // Elderberry
 
-// 2. Adding Elements
-fruits.push("Fig"); // Adds at the end
+console.log("First Fruit:", fruits[0]);
+console.log("Last Fruit:", fruits[fruits.length - 1]);
+
+
+fruits.push("Fig");
 fruits.unshift("Grape"); // Adds at the beginning
 console.log("\nAfter Adding Elements:", fruits);
 
