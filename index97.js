@@ -31,16 +31,16 @@ console.log("\nIndex of 'Cherry':", fruits.indexOf("Cherry"));
 console.log("Does the array include 'Banana'?", fruits.includes("Banana")); 
 
 
-const sortedFruits = [...fruits].sort(); // Sorting alphabetically
+const sortedFruits = [...fruits].sort();
 console.log("\nSorted Fruits:", sortedFruits);
 console.log("Reversed Fruits:", sortedFruits.reverse());
 
-// 7. Joining Array into a String
+
 const fruitString = fruits.join(", ");
 console.log("\nFruits as a String:", fruitString);
 
-// 8. Slicing and Splicing
-const slicedFruits = fruits.slice(1, 3); // Gets elements from index 1 to 2
+
+const slicedFruits = fruits.slice(1, 3);
 console.log("\nSliced Fruits (index 1 to 3):", slicedFruits);
 
 fruits.splice(2, 1, "Guava"); // Removes 1 element at index 2 and adds 'Guava'
