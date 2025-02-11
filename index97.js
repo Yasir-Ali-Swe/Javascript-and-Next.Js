@@ -43,9 +43,9 @@ console.log("\nFruits as a String:", fruitString);
 const slicedFruits = fruits.slice(1, 3);
 console.log("\nSliced Fruits (index 1 to 3):", slicedFruits);
 
-fruits.splice(2, 1, "Guava"); // Removes 1 element at index 2 and adds 'Guava'
+fruits.splice(2, 1, "Guava");
 console.log("After Splice:", fruits);
 
-// 9. Mapping Array (Convert to Uppercase)
+
 const uppercaseFruits = fruits.map(fruit => fruit.toUpperCase());
 console.log("\nUppercase Fruits:", uppercaseFruits);
