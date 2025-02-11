@@ -7,15 +7,15 @@ console.log("Last Fruit:", fruits[fruits.length - 1]);
 
 
 fruits.push("Fig");
-fruits.unshift("Grape"); // Adds at the beginning
+fruits.unshift("Grape");
 console.log("\nAfter Adding Elements:", fruits);
 
-// 3. Removing Elements
-fruits.pop(); // Removes last element
-fruits.shift(); // Removes first element
+
+fruits.pop();
+fruits.shift();
 console.log("\nAfter Removing Elements:", fruits);
 
-// 4. Looping Through the Array
+
 console.log("\nLooping with For Loop:");
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
