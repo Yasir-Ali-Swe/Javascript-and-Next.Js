@@ -26,11 +26,11 @@ fruits.forEach((fruit, index) => {
   console.log(`Index ${index}: ${fruit}`);
 });
 
-// 5. Searching in the Array
-console.log("\nIndex of 'Cherry':", fruits.indexOf("Cherry")); // 2
-console.log("Does the array include 'Banana'?", fruits.includes("Banana")); // true
 
-// 6. Sorting and Reversing
+console.log("\nIndex of 'Cherry':", fruits.indexOf("Cherry"));
+console.log("Does the array include 'Banana'?", fruits.includes("Banana")); 
+
+
 const sortedFruits = [...fruits].sort(); // Sorting alphabetically
 console.log("\nSorted Fruits:", sortedFruits);
 console.log("Reversed Fruits:", sortedFruits.reverse());
