@@ -18,7 +18,7 @@ function fetchData(value) {
     })
     .then((result) => {
       console.log(result); 
-      return fetchData("Final Data"); // Another promise call
+      return fetchData("Final Data"); 
     })
     .then((result) => {
       console.log(result); // Logs: Data fetched: Final Data
