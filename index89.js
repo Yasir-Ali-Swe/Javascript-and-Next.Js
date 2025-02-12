@@ -24,7 +24,7 @@ function fetchData(value) {
       console.log(result);
     })
     .catch((error) => {
-      console.error(error); // Handles any error in the chain
+      console.error(error); 
     })
     .finally(() => {
       console.log("Promise chain completed!"); 
