@@ -13,11 +13,11 @@ function fetchData(value) {
 
   fetchData("User Data")
     .then((result) => {
-      console.log(result); // Logs: Data fetched: User Data
-      return fetchData("Processed Data"); // Call another promise
+      console.log(result);
+      return fetchData("Processed Data");
     })
     .then((result) => {
-      console.log(result); // Logs: Data fetched: Processed Data
+      console.log(result); 
       return fetchData("Final Data"); // Another promise call
     })
     .then((result) => {
