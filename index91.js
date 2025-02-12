@@ -8,7 +8,6 @@ function controlFlowExample(num) {
         console.log("The number is less than 10");
     }
 
-    // Switch
     switch (num) {
         case 5:
             console.log("The number is 5");
