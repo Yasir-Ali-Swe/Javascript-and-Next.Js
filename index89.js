@@ -21,7 +21,7 @@ function fetchData(value) {
       return fetchData("Final Data"); 
     })
     .then((result) => {
-      console.log(result); // Logs: Data fetched: Final Data
+      console.log(result);
     })
     .catch((error) => {
       console.error(error); // Handles any error in the chain
