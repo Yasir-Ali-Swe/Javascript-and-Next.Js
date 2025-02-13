@@ -4,7 +4,7 @@ setTimeout(() => {
   console.log("This message is displayed after 3 seconds (setTimeout).");
 }, 3000); 
 
-// setInterval Example
+
 console.log("Starting setInterval...");
 
 let counter = 1;
