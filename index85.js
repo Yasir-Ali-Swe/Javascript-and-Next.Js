@@ -12,7 +12,7 @@ const intervalId = setInterval(() => {
   console.log(`Interval message ${counter}: This is displayed every 2 seconds.`);
   counter++;
 
-  // Stop the interval after 5 iterations
+
   if (counter > 5) {
     clearInterval(intervalId); // Stops the interval
     console.log("setInterval stopped after 5 iterations.");
