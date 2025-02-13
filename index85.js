@@ -1,4 +1,3 @@
-// setTimeout Example
 console.log("Starting setTimeout...");
 
 setTimeout(() => {
