@@ -2,7 +2,7 @@ console.log("Starting setTimeout...");
 
 setTimeout(() => {
   console.log("This message is displayed after 3 seconds (setTimeout).");
-}, 3000); // Executes after 3000 milliseconds (3 seconds)
+}, 3000); 
 
 // setInterval Example
 console.log("Starting setInterval...");
