@@ -14,7 +14,7 @@ const intervalId = setInterval(() => {
 
 
   if (counter > 5) {
-    clearInterval(intervalId); // Stops the interval
+    clearInterval(intervalId); 
     console.log("setInterval stopped after 5 iterations.");
   }
 }, 2000); // Executes every 2000 milliseconds (2 seconds)
