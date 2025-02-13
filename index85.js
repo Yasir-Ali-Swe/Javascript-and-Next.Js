@@ -17,6 +17,6 @@ const intervalId = setInterval(() => {
     clearInterval(intervalId); 
     console.log("setInterval stopped after 5 iterations.");
   }
-}, 2000); // Executes every 2000 milliseconds (2 seconds)
+}, 2000); 
 
 console.log("Waiting for setTimeout and setInterval...");
