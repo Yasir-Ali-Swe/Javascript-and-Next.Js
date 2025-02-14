@@ -31,13 +31,11 @@ const subtractNumbers = function (a, b) {
  
   console.log(
     "Higher-Order Function:",
-    calculate(5, 3, (a, b) => a ** b) // Power operation
+    calculate(5, 3, (a, b) => a ** b) 
   );
-  
-  // Using Callback Function
+
   doMath(10, 5, subtractNumbers);
   
-  // Recursive Function
   console.log("Factorial of 5:", factorial(5));
   
   // Default Parameters
