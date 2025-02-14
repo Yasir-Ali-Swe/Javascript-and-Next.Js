@@ -4,16 +4,10 @@ function addNumbers(a, b) {
 const subtractNumbers = function (a, b) {
     return a - b;
   };
-  
-  // 3. Arrow Function
   const multiplyNumbers = (a, b) => a * b;
-  
-  // 4. Higher-Order Function (Accepts a function as an argument)
   function calculate(a, b, operation) {
     return operation(a, b);
   }
-  
-  // 5. IIFE (Immediately Invoked Function Expression)
   (function greet() {
     console.log("Hello! This is an IIFE.");
   })();
