@@ -1,10 +1,7 @@
-// 1. Function Declaration
 function addNumbers(a, b) {
     return a + b;
-  }
-  
-  // 2. Function Expression
-  const subtractNumbers = function (a, b) {
+  }  
+const subtractNumbers = function (a, b) {
     return a - b;
   };
   
