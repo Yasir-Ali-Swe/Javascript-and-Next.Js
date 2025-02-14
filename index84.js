@@ -23,12 +23,12 @@ const subtractNumbers = function (a, b) {
     return a / b;
   }
   
-  // Testing the functions
-  console.log("Addition:", addNumbers(5, 3)); // Function Declaration
-  console.log("Subtraction:", subtractNumbers(5, 3)); // Function Expression
-  console.log("Multiplication:", multiplyNumbers(5, 3)); // Arrow Function
+
+  console.log("Addition:", addNumbers(5, 3)); 
+  console.log("Subtraction:", subtractNumbers(5, 3)); 
+  console.log("Multiplication:", multiplyNumbers(5, 3)); 
   
-  // Using Higher-Order Function
+ 
   console.log(
     "Higher-Order Function:",
     calculate(5, 3, (a, b) => a ** b) // Power operation
