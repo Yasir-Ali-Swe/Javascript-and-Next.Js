@@ -11,19 +11,14 @@ const subtractNumbers = function (a, b) {
   (function greet() {
     console.log("Hello! This is an IIFE.");
   })();
-  
-  // 6. Callback Function
   function doMath(a, b, callback) {
     console.log("Result:", callback(a, b));
   }
-  
-  // 7. Recursive Function
   function factorial(n) {
     if (n === 0) return 1;
     return n * factorial(n - 1);
   }
-  
-  // 8. Default Parameters
+
   function divideNumbers(a, b = 1) {
     return a / b;
   }
