@@ -38,7 +38,7 @@ const subtractNumbers = function (a, b) {
   
   console.log("Factorial of 5:", factorial(5));
   
-  // Default Parameters
-  console.log("Division (with default):", divideNumbers(10)); // Dividing by 1
+
+  console.log("Division (with default):", divideNumbers(10)); 
   console.log("Division (with provided):", divideNumbers(10, 2));
   
