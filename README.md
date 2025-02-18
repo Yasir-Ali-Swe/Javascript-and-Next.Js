@@ -8,5 +8,5 @@ The purpose of this repository is to:
 - In this repo i will share all the technologies i have study in my 5th semester.
 - I will learn html,css,javascript,tailwindcss and next.js in this semester.
 - Organize all lab work in one place.
-- Track progress over the semester
-- Share my work with others and keep a record for future reference
+- Track progress over the semester.
+- Share my work with others and keep a record for future reference.
