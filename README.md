@@ -9,4 +9,4 @@ The purpose of this repository is to:
 - I will learn html,css,javascript,tailwindcss and next.js in this semester.
 - Organize all lab work in one place.
 - Track progress over the semester.
-- Share my work with others and keep a record for future reference.
+- Share my work with others and keep a record for future reference
