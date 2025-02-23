@@ -4,5 +4,5 @@ console.log(true && false);
 console.log(true || false); 
 console.log(false || false); 
 
-console.log(true && false || true); //Yasir A
+console.log(true && false || true); //Yasir
 
